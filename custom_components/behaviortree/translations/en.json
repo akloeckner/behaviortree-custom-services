@@ -1,0 +1,14 @@
+{
+    "services": {
+        "sequence": {
+            "description": "Runs a list of actions in order until one fails.",
+            "fields": {
+                "actions": {
+                    "description": "The list of actions to run.",
+                    "name": "Actions"
+                }
+            },
+            "name": "Sequence"
+        }
+    }
+}

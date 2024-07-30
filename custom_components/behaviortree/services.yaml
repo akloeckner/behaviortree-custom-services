@@ -1,0 +1,8 @@
+# Describes the format for available component services
+
+sequence:
+  fields:
+    actions:
+      required: true
+      selector:
+        action:
