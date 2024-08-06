@@ -1,5 +1,13 @@
 """Module with behavior tree services."""
 
+# Init/de-init
+# maybe recommend to have waitt for trigger at end of eacha ction.
+# wait for behaviortree_stop , data: unique id
+
+# resturing status from running action
+# maybe use events behaviortree_status, data: UID + status
+
+
 from __future__ import annotations
 
 import voluptuous as vol
@@ -10,7 +18,6 @@ from homeassistant.core import (
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
-    callback,
 )
 
 from homeassistant.helpers.script import Script
@@ -42,7 +49,9 @@ async def async_setup_services(hass: HomeAssistant) -> None:
             run_variables={},
             context=service.context,
         )
-        return result.service_response or {}
+        if service.return_response:
+            return result.service_response or {}
+        return None
 
     hass.services.async_register(
         domain=DOMAIN,

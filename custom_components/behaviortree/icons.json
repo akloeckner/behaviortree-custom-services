@@ -1,0 +1,6 @@
+{
+    "services": {
+        "sequence": "mdi:arrow-right-thin-circle-outline",
+        "selector": "mdi:help-circle-outline"
+    }
+}
